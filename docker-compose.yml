@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  app_secondservice:
+    build:
+      context: app/
+    ports:
+      - '5000'
+    networks:
+      - traefik
+
+networks:
+  traefik:
+    external: true

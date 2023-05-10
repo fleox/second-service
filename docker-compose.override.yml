@@ -1,0 +1,10 @@
+services:
+  app_secondservice:
+    labels:
+      - "traefik.http.routers.appsecondservice.rule=Host(`local.second-service.fr`)"
+      - traefik.http.routers.appsecondservice.entrypoints=http
+      - traefik.http.services.appsecondservice.loadbalancer.server.port=5000
+    networks:
+      - traefik
+
+
